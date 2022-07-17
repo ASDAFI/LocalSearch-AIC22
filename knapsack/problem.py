@@ -3,9 +3,11 @@ import os
 def get_cases():
     cases = []
     for i in os.listdir("knapsack/cases"):
-        cases.append(i)
+        cases.append(int(i))
+    
+    cases.sort()
 
-    return i    
+    return cases   
 
 def show_input(n : int) -> None:
     f = open("knapsack/cases/" + str(n), 'r')
