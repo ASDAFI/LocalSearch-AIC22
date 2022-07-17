@@ -50,3 +50,9 @@ def sort_by_values(n, V) -> list:
     items = sorted(items, key = lambda x: x[0], reverse = True)
     I = [item[1] for item in items]
     return I
+
+def sort_by_density(n, V, W) -> list:
+    items = [[V[i]/W[i], i] for i in range(n)]
+    items = sorted(items, key = lambda x: x[0], reverse = True)
+    I = [item[1] for item in items]
+    return I
