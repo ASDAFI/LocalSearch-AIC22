@@ -24,17 +24,18 @@ def get_input(n : int) -> tuple:
     values = []
     for i in range(1, n+1):
         v, w = map(int, lines[i].split())
-        weights.append(w)
         values.append(v)
+        weights.append(w)
+        
     
-    return (n, k, weights, values)
+    return (n, k, values, weights)
 
 def test_solver(solver, n):
     print("Input:")
     show_input(n)
-    n, k, weights, values = get_input(n)
+    n, k, values, weights = get_input(n)
     print("Output:")
-    value, items = solver(n, k, weights, values)
+    value, items = solver(n, k, values, weights)
     print(value)
     [print(item, end = " ") for item in items]
     return
