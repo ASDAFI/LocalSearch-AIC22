@@ -1,3 +1,12 @@
+import os
+
+def get_cases():
+    cases = []
+    for i in os.listdir("knapsack/cases"):
+        cases.append(i)
+
+    return i    
+
 def show_input(n : int) -> None:
     f = open("knapsack/cases/" + str(n), 'r')
     print(f.read())
@@ -27,3 +36,5 @@ def test_solver(solver, n):
     print(value)
     [print(item, end = " ") for item in items]
     return
+
+
