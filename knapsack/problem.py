@@ -56,3 +56,13 @@ def sort_by_density(n, V, W) -> list:
     items = sorted(items, key = lambda x: x[0], reverse = True)
     I = [item[1] for item in items]
     return I
+
+def summary_solution(n, k, values, weights, items):
+    value = 0
+    weight = 0
+    for i in range(n):
+        if items[i] == 1:
+            value += values[i]
+            weight += weights[i]
+    print("weight:", weight, "value:", value)
+    return 
