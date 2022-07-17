@@ -30,14 +30,23 @@ def get_input(n : int) -> tuple:
     
     return (n, k, values, weights)
 
-def test_solver(solver, n):
+def test_solver(n, solver):
     print("Input:")
     show_input(n)
     n, k, values, weights = get_input(n)
     print("Output:")
-    value, items = solver(n, k, values, weights)
+    items = solver(n, k, values, weights)
+    value = 0
+    for i in range(n):
+        if items[i] == 1:
+            value += values[i]
+    
     print(value)
     [print(item, end = " ") for item in items]
     return
 
-
+def sort_by_values(n, V) -> list:
+    items = [[V[i], i] for i in range(n)]
+    items = sorted(items, key = lambda x: x[0], reverse = True)
+    I = [item[1] for item in items]
+    return I
