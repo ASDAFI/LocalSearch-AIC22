@@ -23,7 +23,7 @@ def get_input(n : int) -> tuple:
     weights = []
     values = []
     for i in range(1, n+1):
-        w, v = map(int, lines[i].split())
+        v, w = map(int, lines[i].split())
         values.append(v)
         weights.append(w)
         
