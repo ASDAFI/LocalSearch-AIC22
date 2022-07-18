@@ -54,12 +54,16 @@ def summary_solution(n, k, values, weights, items):
     print("weight:", weight, "value:", value)
     return 
 
-def test_solver(n, solver):
+def test_solver(n, solver, iterations = None):
     print("Input:")
     show_input(n)
     n, k, values, weights = get_input(n)
     print("Output:")
-    items = solver(n, k, values, weights)
+    if(iterations == None):
+
+        items = solver(n, k, values, weights)
+    else:
+        items = solver(n, k, values, weights, iterations)
     value = 0
     for i in range(n):
         if items[i] == 1:
